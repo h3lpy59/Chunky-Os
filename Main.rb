@@ -2,7 +2,7 @@
 
 /Var or Def/
 def clearscreen()
-    puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 end
 
 def centerscreen()
@@ -19,16 +19,29 @@ def returnhome()
     clearscreen()
     puts "         Spinning Donut         app2        app3"
     centerscreen()
-    print "option: "
-    option = gets.chomp
-    if option == "Spinning Donut"
-        clearscreen()
-        spinningdonut()
-    else
-        puts "Not valid cmd"
+    loop do
         print "option: "
         option = gets.chomp
-        return option
+        settings = false
+        if option == "Spinning Donut"
+            clearscreen()
+            spinningdonut()
+        elsif option == "home"
+            returnhome()
+        elsif option == "settings"
+            settings = true
+            clearscreen()
+            print("                          Setting1\n\n                          Setting2\n\n                          Setting3")
+            centerscreen()
+        elsif option == "settingsvalue"
+            puts settings
+        elsif option == "cmd"
+            clearscreen()
+            print "Type in your ruby input cmd... "
+            gets.chomp
+        else
+            puts "#{option} is not a valid cmd (Check for any spelling errors?)"
+        end
     end
 end
 
